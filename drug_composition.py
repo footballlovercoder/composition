@@ -53,6 +53,6 @@ st.write(filtered['Item_Name'])
 data_filtered=data[data['Item_Name']==name]
 try:
     st.write(data_filtered['Alternate Medicines'].values[0])
-except
+except:
      st.write(" ")
 
