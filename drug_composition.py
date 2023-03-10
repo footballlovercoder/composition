@@ -45,5 +45,11 @@ df=df.rename(columns={"Medicine Name":"Item_Name"})
 data=df.copy()
 debounce = st.checkbox("Add 0.5s debounce?")
 name = st_keyup("Enter medicine name", debounce=500 if debounce else None)
+if name:
+    filered=data[data.Item_Name.str.lower().str.contains(name.lower(), na=False)]
+else:
+    filtered=data
+st.write(len(filtered), "medicines found")
+st.write(filtered)
 #data_filtered=data[data['Item_Name']==choice]
 
