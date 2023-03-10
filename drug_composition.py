@@ -51,5 +51,5 @@ else:
 st.write(len(filtered), "medicines found")
 st.write(filtered['Item_Name'])
 data_filtered=data[data['Item_Name']==name]
-st.write(data_filtered)
+st.write(data_filtered['Alternate Medicines'].values)
 
