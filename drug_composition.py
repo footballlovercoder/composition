@@ -21,6 +21,7 @@ from email.mime.multipart import MIMEMultipart
 from smtplib import SMTP
 import smtplib
 import sys
+from st_keyup import st_keyup
 url3='https://raw.githubusercontent.com/footballlovercoder/wellocity_consumption/main/drug_info1.csv'
 url4='https://raw.githubusercontent.com/footballlovercoder/wellocity_consumption/main/drug_info2.csv'
 def clean_data(x):
@@ -42,5 +43,7 @@ df['Uses']=df['Uses'].apply(lambda x:clean_data(x))
 df['Alternate Medicines']=df['Alternate Medicines'].apply(lambda x:clean_data(x))
 df=df.rename(columns={"Medicine Name":"Item_Name"})
 data=df.copy()
-choice=st.selectbox('Medicine Name',data['Item_Name'].values)
-data_filtered=data[data['Item_Name']==choice]
+debounce = st.checkbox("Add 0.5s debounce?")
+name = st_keyup("Enter medicine name", debounce=500 if debounce else None)
+#data_filtered=data[data['Item_Name']==choice]
+
