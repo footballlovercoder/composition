@@ -170,7 +170,7 @@ st.text("")
 if option =='Check Consumption Pattern':
     #st.header('Consumption Pattern')
     choice=st.selectbox('Medicine Name',data['Item_Name'].values)
-    ch_actvcust=choice.copy
+    ch_actvcust=choice.copy()
     data_filtered=data[data['Item_Name']==choice]
     st.markdown(
             """
