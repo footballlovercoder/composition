@@ -15,6 +15,7 @@ from email.mime.multipart import MIMEMultipart
 from smtplib import SMTP
 import smtplib
 import sys
+import copy
 
 
 url1="https://github.com/soham1993/wellocity_consumption/raw/main/wello_sale.csv"
@@ -170,7 +171,7 @@ st.text("")
 if option =='Check Consumption Pattern':
     #st.header('Consumption Pattern')
     choice=st.selectbox('Medicine Name',data['Item_Name'].values)
-    ch_actvcust=choice.copy()
+    ch_actvcust=copy.deepcopy(choice)
     data_filtered=data[data['Item_Name']==choice]
     st.markdown(
             """
