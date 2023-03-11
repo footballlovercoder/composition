@@ -238,7 +238,7 @@ if option =='Check Consumption Pattern':
             df1=df1[df1['Item Name']==ch_actvcust]
             df2=df1.groupby('Item Name')['Patient Name'].nunique().reset_index()
             df2=df2.rename(columns={'Patient Name':'Unique_customers'})
-            st.metric(label="Active Customer", value=df2['Unique_customers'].values[0])
+            st.metric(label="Active Customers", value=df2['Unique_customers'].values[0])
          else:
     
                  for col in list(reversed(cols1)):
