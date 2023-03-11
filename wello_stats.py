@@ -230,7 +230,7 @@ if option =='Check Consumption Pattern':
             chart=alt.Chart(source).mark_bar().encode(x='month',y='strips')
             st.altair_chart(chart,use_container_width=True) 
          elif option=='Active Customers':
-            d=date.today().strftime('%Y-%m-01')
+            d=pd.to_datetime(date.today().strftime('%Y-%m-01'))
             limit=d+relativedelta(months=-choice)
             limit=limit.strftime('%Y-%m-01')
             df1=df[['Date','Item Name','Patient Name']]
