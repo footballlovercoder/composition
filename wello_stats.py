@@ -163,7 +163,7 @@ st.markdown(
 unsafe_allow_html=True,
 )
 st.title("Choose Activity")
-option = st.selectbox('Choose Activity',('Check Consumption Pattern','Get Low Stock Alert','Filter Data'))
+option = st.selectbox('',('Check Consumption Pattern','Get Low Stock Alert','Filter Data'))
 st.text("")
 st.text("")
 st.text("")
